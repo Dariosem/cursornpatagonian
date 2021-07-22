@@ -1,14 +1,26 @@
 import React from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Alert, Image, StyleSheet, Text, View } from 'react-native';
+
+import { DefaultButton } from './src/components';
+
 import { DEVICE_WIDTH } from './src/utils/dimensions';
 import { colors } from './src/utils/theme';
+
+const showAlert = () => {
+  Alert.alert('Hola');
+};
 
 const App = () => {
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.title}>Título</Text>
       <Text>Subtítulo</Text>
-      <Image source={{ uri: 'https://miro.medium.com/max/400/1*mrOXGyIa3BlPK80peLmEbA.png' }} style={styles.image} />
+      <Image
+        source={{ uri: 'https://miro.medium.com/max/400/1*mrOXGyIa3BlPK80peLmEbA.png' }}
+        style={styles.image}
+        resizeMode="contain"
+      />
+      <DefaultButton onPress={showAlert} />
     </View>
   );
 };
@@ -32,6 +44,7 @@ const styles = StyleSheet.create({
     width: DEVICE_WIDTH * 0.5,
     aspectRatio: 1,
     minHeight: 100,
+    borderRadius: 10,
   },
 });
 
