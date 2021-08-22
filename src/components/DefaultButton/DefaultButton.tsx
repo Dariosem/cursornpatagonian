@@ -1,18 +1,26 @@
 import React from 'react';
-import { Text, TouchableOpacity } from 'react-native';
+import { Text, TouchableOpacity, ViewStyle } from 'react-native';
 
 import styles from './styles';
 
 interface Props {
+  additionalStyles?: ViewStyle;
+  fontSize: number;
   onPress: () => void;
+  text: string;
 }
 
-const DefaultButton = ({ onPress }: Props) => {
+const DefaultButton = ({ additionalStyles, fontSize, onPress, text }: Props) => {
   return (
-    <TouchableOpacity onPress={onPress} style={styles.mainContainer}>
-      <Text>Hola btn</Text>
+    <TouchableOpacity onPress={onPress} style={[styles.mainContainer, additionalStyles]}>
+      <Text style={{ fontSize: fontSize }}>{text}</Text>
     </TouchableOpacity>
   );
+};
+
+DefaultButton.defaultProps = {
+  additionalStyles: {},
+  fontSize: 14,
 };
 
 export default DefaultButton;

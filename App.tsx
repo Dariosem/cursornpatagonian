@@ -20,7 +20,12 @@ const App = () => {
         style={styles.image}
         resizeMode="contain"
       />
-      <DefaultButton onPress={showAlert} />
+      <DefaultButton
+        text="Boton Hola!!"
+        onPress={showAlert}
+        additionalStyles={styles.button}
+        fontSize={20}
+      />
     </View>
   );
 };
@@ -45,6 +50,11 @@ const styles = StyleSheet.create({
     aspectRatio: 1,
     minHeight: 100,
     borderRadius: 10,
+  },
+  button: {
+    backgroundColor: colors.verylightBlue,
+    borderColor: colors.mainOrange,
+    borderWidth: 2,
   },
 });
 
