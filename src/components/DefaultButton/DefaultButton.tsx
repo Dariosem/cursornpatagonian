@@ -1,5 +1,6 @@
 import React from 'react';
 import { Text, TouchableOpacity, ViewStyle } from 'react-native';
+import { colors } from '../../utils/theme';
 
 import styles from './styles';
 
@@ -8,12 +9,26 @@ interface Props {
   fontSize: number;
   onPress: () => void;
   text: string;
+  variant?: 'primary' | 'secondary';
 }
 
-const DefaultButton = ({ additionalStyles, fontSize, onPress, text }: Props) => {
+const DefaultButton = ({
+  additionalStyles,
+  fontSize,
+  onPress,
+  text,
+  variant = 'primary',
+}: Props) => {
+  const textStyle = {
+    primary: colors.white,
+    secondary: colors.mainOrange,
+  };
   return (
-    <TouchableOpacity onPress={onPress} style={[styles.mainContainer, additionalStyles]}>
-      <Text style={{ fontSize: fontSize }}>{text}</Text>
+    <TouchableOpacity
+      onPress={onPress}
+      style={[styles.mainContainer, styles[variant], additionalStyles]}
+    >
+      <Text style={{ color: textStyle[variant] || colors.white, fontSize: fontSize }}>{text}</Text>
     </TouchableOpacity>
   );
 };
@@ -21,6 +36,7 @@ const DefaultButton = ({ additionalStyles, fontSize, onPress, text }: Props) => 
 DefaultButton.defaultProps = {
   additionalStyles: {},
   fontSize: 14,
+  variant: 'primary',
 };
 
 export default DefaultButton;

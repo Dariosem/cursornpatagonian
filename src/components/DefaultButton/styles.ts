@@ -4,12 +4,21 @@ import { colors } from '../../utils/theme';
 
 const styles = StyleSheet.create({
   mainContainer: {
-    backgroundColor: colors.mainOrange,
-    width: '80%',
-    justifyContent: 'center',
     alignItems: 'center',
+    backgroundColor: colors.mainOrange,
+    borderColor: colors.white,
     height: 50,
+    justifyContent: 'center',
     marginTop: 10,
+    width: '80%',
+  },
+  primary: {
+    backgroundColor: colors.mainOrange,
+    borderColor: colors.white,
+  },
+  secondary: {
+    backgroundColor: colors.white,
+    borderColor: colors.mainOrange,
   },
 });
 
