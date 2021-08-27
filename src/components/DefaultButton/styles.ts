@@ -7,6 +7,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: colors.mainOrange,
     borderColor: colors.white,
+    borderRadius: 7,
     height: 50,
     justifyContent: 'center',
     marginTop: 10,
@@ -19,6 +20,7 @@ const styles = StyleSheet.create({
   secondary: {
     backgroundColor: colors.white,
     borderColor: colors.mainOrange,
+    borderWidth: 1,
   },
 });
 

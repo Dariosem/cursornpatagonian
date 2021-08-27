@@ -1,16 +1,21 @@
-import React from 'react';
-import { Alert, Image, StyleSheet, Text, View } from 'react-native';
+import React, { useState } from 'react';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
-import { DefaultButton } from './src/components';
+import { DefaultButton, DefaultModal } from './src/components';
 
 import { DEVICE_WIDTH } from './src/utils/dimensions';
 import { colors } from './src/utils/theme';
 
-const showAlert = () => {
-  Alert.alert('Hola');
-};
-
 const App = () => {
+  const [isModalVisible, setModalVisible] = useState(false);
+
+  const showModal = () => {
+    setModalVisible(true);
+  };
+  const hideModal = () => {
+    setModalVisible(false);
+  };
+
   return (
     <View style={styles.mainContainer}>
       <Text style={styles.title}>Título</Text>
@@ -20,7 +25,15 @@ const App = () => {
         style={styles.image}
         resizeMode="contain"
       />
-      <DefaultButton text="Boton Hola!!" onPress={showAlert} fontSize={20} variant="primary" />
+      <DefaultButton text="Boton Hola!!" onPress={showModal} fontSize={20} variant="primary" />
+      <DefaultModal
+        visible={isModalVisible}
+        onPressPrimaryButton={hideModal}
+        onPressSecondaryButton={hideModal}
+        primaryButtonText="Ok"
+        secondaryButtonText="Cancel"
+        text="Hola Modal"
+      />
     </View>
   );
 };
