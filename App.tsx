@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Image, StyleSheet, Text, View } from 'react-native';
+import { Image, StyleSheet, View } from 'react-native';
 
-import { DefaultButton, DefaultModal } from './src/components';
+import { DefaultButton, DefaultModal, Typography } from './src/components';
 
 import { DEVICE_WIDTH } from './src/utils/dimensions';
 import { colors } from './src/utils/theme';
@@ -18,8 +18,10 @@ const App = () => {
 
   return (
     <View style={styles.mainContainer}>
-      <Text style={styles.title}>Título</Text>
-      <Text>Subtítulo</Text>
+      <Typography color={colors.mainOrange} size={40} additionalStyle={styles.title}>
+        Título
+      </Typography>
+      <Typography>Subtítulo</Typography>
       <Image
         source={{ uri: 'https://miro.medium.com/max/400/1*mrOXGyIa3BlPK80peLmEbA.png' }}
         style={styles.image}
@@ -47,8 +49,6 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   title: {
-    color: colors.mainOrange,
-    fontSize: 30,
     fontWeight: 'bold',
     fontStyle: 'italic',
     marginBottom: 10,
