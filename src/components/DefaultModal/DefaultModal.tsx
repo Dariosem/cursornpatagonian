@@ -1,5 +1,6 @@
 import React from 'react';
-import { Modal, Text, View } from 'react-native';
+import { Modal, View } from 'react-native';
+import Typography from '../Typography';
 import DefaultButton from './../DefaultButton';
 import styles from './styles';
 
@@ -23,7 +24,7 @@ const DefaultModal = ({
     <Modal animationType="fade" transparent visible={visible}>
       <View style={styles.mainModalContainer}>
         <View style={styles.textContainer}>
-          <Text>{text}</Text>
+          <Typography size={20}>{text}</Typography>
           <DefaultButton fontSize={20} onPress={onPressPrimaryButton} text={primaryButtonText} />
           {secondaryButtonText && onPressSecondaryButton ? (
             <DefaultButton
