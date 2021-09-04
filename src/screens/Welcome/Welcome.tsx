@@ -4,6 +4,7 @@ import { View } from 'react-native';
 import { DefaultButton, Separator, Typography } from '../../components';
 import styles from './styles';
 
+// @ts-ignore
 const WelcomeScreen = ({ navigation }) => {
   return (
     <View style={styles.mainContainer}>

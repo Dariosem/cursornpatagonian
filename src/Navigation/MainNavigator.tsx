@@ -1,5 +1,6 @@
 import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+// import { createNativeStackNavigator } from '@react-navigation/native-stack';
+const { createNativeStackNavigator } = require('@react-navigation/native-stack');
 import { ExperimentalScreen, WelcomeScreen } from '../screens';
 
 const Stack = createNativeStackNavigator();
