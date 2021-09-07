@@ -4,24 +4,21 @@ import { View } from 'react-native';
 import { DefaultButton, Separator, Typography } from '../../components';
 import styles from './styles';
 
-// @ts-ignore
-const WelcomeScreen = ({ navigation }) => {
+import { goToScreen, replaceRoute } from '../../Navigation/controls';
+
+const WelcomeScreen = () => {
   return (
     <View style={styles.mainContainer}>
       <Typography size={20} variant="medium">
         Welcome Screen
       </Typography>
       <Separator size={15} />
-      <DefaultButton
-        text="Go To Tabs"
-        fontSize={16}
-        onPress={() => navigation.navigate('TabNavigator')}
-      />
+      <DefaultButton text="Go To Tabs" fontSize={16} onPress={() => replaceRoute('TabNavigator')} />
       <Separator size={10} />
       <DefaultButton
         text="Go To Experimental Screen"
         fontSize={16}
-        onPress={() => navigation.navigate('Experimental')}
+        onPress={() => goToScreen('Experimental')}
         variant="secondary"
       />
     </View>
